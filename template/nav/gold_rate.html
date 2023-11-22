@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Gold Rate - JoyAlukkas{% endblock %}
+
+
+{% block content %}
+
+    <div class="diamond-container">
+        <div class="half left">
+            <h1 class="gold-text">GOLD RATE</h1>
+            <p class="gold-subtext">Check the prevailing gold rates in both retail and online stores</p>
+            <button class="rate-button">Retail Store Rate</button>
+            <button class="rate-button">Online Store Rate</button>
+        </div>
+        <div class="half right">
+            <img src="{% static 'img/gold1.jpg' %}">
+        </div>
+
+    </div>
+
+{% endblock %}

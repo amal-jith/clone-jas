@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Diamond Certificate - JoyAlukkas{% endblock %}
+
+
+{% block content %}
+
+    <div class="diamond-container">
+        <div class="half left">
+            DIAMOND CERTIFICATE
+            <form>
+            <div class="form-group mb-3">
+                <input id="certificatenum" type="text" placeholder="Enter Certificate Number" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" style="position: relative;">
+            </div>
+            <button class="rate-button" style="position: relative;">CHECK STATUS</button>
+            </form>
+        </div>
+        <div class="half right">
+            <img src="{% static 'img/diamond1.png' %}">
+        </div>
+    </div>
+
+{% endblock %}

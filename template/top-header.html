@@ -1,0 +1,199 @@
+
+<!---SIDEBAR--TOP HEADER--NAVBAR-->
+
+    {% load static %}
+
+<!-- <div class="logo">
+        <img src="https://www.joyalukkas.in/media/assets/icons/Jas.jpg" class="w-100" alt="JAS Logo">
+    </div>-->
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <i class='bx bxl-meta' style="transform: rotate(180deg);"></i>
+                <div class="logo_name">JoyAlukkas</div>
+            </div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <i class='bx bx-search-alt'></i>
+                <input type="text" placeholder="Search">
+               <!--<span class="tooltip">Search</span>-->
+            </li>
+            <li>
+                <a href="{% url 'jew_app:aboutus' %}">
+                    <i class='bx bxs-castle'></i>
+                    <span class="links_name">About Us</span>
+                </a>
+                <span class="tooltip">About Us</span>
+            </li>
+            <li>
+                <a href="{% url 'jew_app:awards' %}">
+                    <i class='bx bx-award'></i>
+                    <span class="links_name">Awards</span>
+                </a>
+                <span class="tooltip">Awards</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-gift'></i>
+                    <span class="links_name">Corporate Gifting</span>
+                </a>
+                <span class="tooltip">Corporate Gifting</span>
+            </li>
+            <li>
+                <a href="{% url 'jew_app:promotions' %}">
+                    <i class='bx bx-slideshow'></i>
+                    <span class="links_name">Promotions</span>
+                </a>
+                <span class="tooltip">Promotions</span>
+            </li>
+            <li>
+                <a href="{% url 'accounts:login' %}">
+                    <i class='bx bx-book-alt'></i>
+                    <span class="links_name">Advance Bookings</span>
+                </a>
+                <span class="tooltip">Advance Bookings</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-chat'></i>
+                    <span class="links_name">Contact Us</span>
+                </a>
+                <span class="tooltip">Contact Us</span>
+            </li>
+            <li>
+                <a href="{% url 'jew_app:faq' %}">
+                    <i class='bx bx-question-mark'></i>
+                    <span class="links_name">FAQs</span>
+                </a>
+                <span class="tooltip">FAQs</span>
+            </li>
+            <li>
+                <a href="{% url 'jew_app:joinus' %}">
+                    <i class='bx bx-world'></i>
+                    <span class="links_name">Career</span>
+                </a>
+                <span class="tooltip">Career</span>
+            </li>
+        </ul>
+        <div class="profile_content">
+            <div class="profile">
+                <div class="profile_details">
+                    <div class="profile_name">
+                        {% if request.user.is_authenticated %}
+                        <div class="name">Logged as : {{ request.user.username }}</div>
+                        {% else %}
+                        <div class="name">Please LogIn </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <a href="{% url 'accounts:logout' %}">
+                    <i class='bx bx-log-in' id="log_out"></i></a>
+            </div>
+        </div>
+    </div>
+   <!--HEADER BAR-->
+    <div class="home_content">
+        <div class="top-header">
+            <div class="contact-info">
+                Save the BIG Joy for later through our Easy Gold Scheme <a href="#" style="color:#050505; font-weight:bold;"> Here </a>
+                <i class='bx bx-phone' aria-setsize="-1"></i> Connect With Us On +91 80 0000000
+                <a href="#"> <img src="https://www.joyalukkas.in/ExpressDelivery-6bA.gif" width="80" height="22"></a>
+            </div>
+        </div>
+        <nav id="navbar" class="navbar">
+            <div class="nav-wrapper">
+                 <div class="logo-head">
+                    <a href="{% url 'jew_app:home' %}"><img width="200px" height="auto" src="https://www.joyalukkas.in/media/assets/icons/Jas.jpg"></a>
+                 </div>
+                <ul id="menu">
+                    <li><a href="#jewellery">Jewellery<i class='bx bx-chevron-down'></i></a>
+                        <div class="dropdown-content" style="width: 100vw; margin-left: -205px; color: #3E393E;">
+                            <span>JEWELLERY</span>
+                              <a href="{% url 'jew_app:category_list' %}">Category<i class='bx bx-chevron-right'></i></a>
+                               <!--<div class="nested-dropdown-content"><a href="#">Earrings</a></div>
+                                <div class="nested-dropdown-content"><a href="#">Pendants</a></div>-->
+
+
+                              <a href="{% url 'jew_app:category_list' %}">Collections<i class='bx bx-chevron-right'></i></a>
+                              <a href="{% url 'jew_app:category_list' %}">Men's Jewellery<i class='bx bx-chevron-right'></i></a>
+                              <a href="{% url 'jew_app:category_list' %}">Kid's Jewellery<i class='bx bx-chevron-right'></i></a>
+                              <a href="{% url 'jew_app:category_list' %}">Diamond Jewellery<i class='bx bx-chevron-right'></i></a>
+                              <a href="{% url 'jew_app:category_list' %}">Gold Jewellery<i class='bx bx-chevron-right'></i></a>
+                              <a href="{% url 'jew_app:category_list' %}">Platinum Jewellery<i class='bx bx-chevron-right'></i></a>
+                              <a href="{% url 'jew_app:category_list' %}">Silver Jewellery<i class='bx bx-chevron-right'></i></a>
+                              <a href="{% url 'jew_app:category_list' %}">Bullions<i class='bx bx-chevron-right'></i></a>
+
+                        </div>
+                    </li>
+                    <li><a href="#wedding" >Wedding<i class='bx bx-chevron-down'></i></a>
+                        <div class="dropdown-content"  style="width: 100vw; margin-left: -423px;">
+                            <span>WEDDING</span>
+                          <a href="{% url 'jew_app:category_list' %}">Wedding Tradition<i class='bx bx-chevron-right'></i></a>
+                          <a href="{% url 'jew_app:category_list' %}">Our Brands<i class='bx bx-chevron-right'></i></a>
+                          <a href="{% url 'jew_app:category_list' %}">Wedding Identity<i class='bx bx-chevron-right'></i></a>
+                          <a href="{% url 'jew_app:category_list' %}">Jewellery Education</a>
+                        </div>
+                    </li>
+                    <li><a href="#gifts">Gifts<i class='bx bx-chevron-down'></i></a>
+                        <div class="dropdown-content" style="width: 100vw; margin-left: -630px;">
+                        <span>GIFT</span>
+                          <a href="#">Corporate Gifting</a>
+                          <a href="#">By Occasions<i class='bx bx-chevron-right'></i></a>
+                          <a href="#">For a Special Person<i class='bx bx-chevron-right'></i></a>
+                          <a href="#">Gift Cards</a>
+                        </div>
+                    </li>
+                    <li><a href="#easy-gold">Easy-Gold<i class='bx bx-chevron-down'></i></a>
+                        <div class="dropdown-content" style="width: 100vw; margin-left: -793px;">
+                            <span>EASY-GOLD</span>
+                          <a href="#">Easy Gold Purchase Scheme</a>
+                        </div>
+                    </li>
+                    <li><a href="{% url 'jew_app:promotions' %}">Promotion</a></li>
+
+                    <li>
+                        <a href="{% url 'jew_app:diamond' %}"><i class='bx bx-diamond'></i></a>
+                    </li>
+                    <li>
+                        <a href="{% url 'accounts:login' %}"><i class='bx bx-user'></i></a>
+                    </li>
+                    <li>
+                        <a href="{% url 'jew_app:addToCart' %}"><i class='bx bx-cart'></i></a>
+                        <div class="dropdown-content-cart">
+                          <p style="font-size: 0.5em;">There are no items in your cart</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="{% url 'jew_app:locator' %}"><i class='bx bx-map'></i></a>
+                    </li>
+                    <li>
+                        <i class='bx bx-dots-vertical-rounded'></i>
+                        <div class="dropdown-content-dot">
+                          <a href="#">Wish List <i class='bx bx-heart'></i></a>
+                          <a href="{% url 'jew_app:diamond' %}">Diamond Certificate <i class='bx bx-diamond'></i></a>
+                          <a href="{% url 'jew_app:gold' %}">Gold Rate <i class='bx bx-rupee'></i></a>
+                          <a href="#">Advance Booking <i class='bx bx-book-alt'></i></a>
+                          <a href="#">Store Appointment <i class='bx bx-store' ></i></a>
+                          <a href="{% url 'jew_app:gift' %}">Gift Card Status <i class='bx bx-gift'></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}" style="margin-top: 100px;">
+                    <em>{{message}}</em>
+                </div>
+
+            {% endfor %}
+        {% endif %}
+        <script>
+            setTimeout (() => {
+                $(".alert").alert("close");
+            }, 3000)
+        </script>
+
+    </div>

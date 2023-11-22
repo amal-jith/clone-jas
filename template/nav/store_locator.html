@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Store Locator - JoyAlukkas{% endblock %}
+
+{% block content %}
+
+<div class="store-container">
+    <div class="store-half left">
+        <div class="corner-text">
+            <h4 style="font-size: 4vh;">STORE</h4>
+            <h1 style="font-size: 8vh;">LOCATOR</h1>
+        </div>
+    </div>
+    <div class="store-half right2">
+        <div class="circle">
+            <i class='bx bx-globe' ></i>
+            <p>11 <br> Countries</p>
+        </div>
+        <div class="circle">
+            <i class='bx bx-building' ></i>
+            <p>150 <br> Showrooms</p>
+        </div>
+        <div class="circle">
+            <i class='bx bx-map-pin' ></i>
+            <p>Convenient <br>Locations</p>
+        </div>
+        <div class="circle">
+            <i class='bx bx-group'></i>
+            <p>Personalized <br> Services</p>
+        </div>
+        <div class="loc-container">
+            <img src="{% static 'img/store1.jpg' %}" alt="Image Description">
+        </div>
+    </div>
+
+        <h4 style="font-family: 'Cormorant', serif; font-size: 5vh; font-weight: bold;">FIND THE STORE NEAR YOU!</h4>
+    <div class="near-container">
+        <div class="near-sub">
+            <p style="font-size: 3vh;">Find near ME</p>
+            <button class="access-button" style="position: relative;">Access Location</button>
+            <div class="near-or">
+                <span class="near-or">OR</span>
+            </div>
+        </div>
+        <div class="near-sub">
+            <h5 style="font-size: 3vh;"> Pin Code</h5>
+            <input id="#" type="text" placeholder="Enter Pin Code" class="pin-button" style="position: relative;">
+            <button class="pin-search" style="position: relative;">Search</button>
+        </div>
+        <div class="near-sub">
+            <p style="font-size: 3vh;">Country</p>
+            <input id="##" type="text" placeholder="Select Country" class="access-button" style="position: relative;">
+            <p style="font-size: 3vh;">Select City</p>
+            <input id="###" type="text" placeholder="Select City" class="access-button" style="position: relative;">
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class="product-container">
+        <div class="product-image">
+            <img src="https://www.joyalukkas.in//media/catalog/product//d/s/dsdb00003351_1.jpg" alt="Product Image">
+        </div>
+        <div class="product-details">
+            <h2 style="font-family: 'Cormorant'; font-weight: bold;">Splendid Diamond Bracelet</h2>
+            <p>DSDB00003351</p>
+            <div class="price" style="display: inline-flex;">
+                <div class="discounted-price">
+                   Price:  <h4>&#8377;51,264.00</h4>
+                </div>
+                <div class="original-price" style="margin: 30px;">
+                    <h5>&#8377;59,256.00</h5>
+                </div>
+                <p style="margin: 30px;"><a style="color: #41BF16; font-weight: bold;">25% off</a> on Diamond Charges</p>
+            </div>
+            <div class="made-order" style="margin: 10px; gap: 50px; position: relative; ">
+                Made to Order<a href="#" style="color: black;"><i class='bx bx-question-mark bx-tada' ></i></a>
+                <a href="3" style="z-index: 99; color: #B60505;"> Check more offers</a>
+                <a href="3" style="z-index: 99; color: #B60505;">Price break up</a>
+            </div>
+            <h5>Quantity</h5>
+            <div class="quantity-div">
+                <div class="quantity-btn minus-btn" onclick="decreaseQuantity()">-</div>
+                <input class="quantity-input" type="number" id="quantity" value="1">
+                <div class="quantity-btn plus-btn" onclick="increaseQuantity()">+</div>
+            </div>
+            <div class="delivery-div" style="margin: 10px 0px;">
+
+                <div class="delivery-loc">
+                    <i class='bx bx-location-plus bx-tada' style="font-weight: bold; font-size: 1.5em;"></i>
+                    <div class="delivery-pin" style="display: inline-flex;">
+                        <label for="pincode">Select Delivery Location:</label>
+                        <p style="display: block;">Why share location?</p>
+                        <input class="pincode-input" type="text" id="pincode" required placeholder="Type your PIN">
+                        <div class="error-message"></div>
+                     </div>
+                </div>
+                <div class="store-pickup">
+                    <i class='bx bx-store' style="font-weight: bold; font-size: 2.5em; color: #898181;"></i><a href="#" style="color: #898181; position: relative; font-size: 1.3em; ">Store Pickup</a>
+                    <p >Can't wait for delivery? Shop this product from a store near you</p>
+                </div>
+                <div class="buy-now" style="margin: 10px;">
+                    <button class="buy-button" style="margin: 30px; position: relative;">Buy Now</button>
+                    <a href="{% url 'jew_app:addToCart' %}"><button class="add-button" style="margin: 30px; position: relative;">Add to Cart</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        ASDFGHJKLL
+    </div>
+
+    <script>
+        function decreaseQuantity() {
+            var quantityInput = document.getElementById("quantity");
+            var currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        }
+
+        function increaseQuantity() {
+            var quantityInput = document.getElementById("quantity");
+            var currentValue = parseInt(quantityInput.value);
+            quantityInput.value = currentValue + 1;
+        }
+    </script>
+
+
+{% endblock %}

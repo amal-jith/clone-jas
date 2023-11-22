@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Cart | JoyAlukkas{% endblock %}
+
+
+{% block content %}
+
+    <div class="cart-container">
+        <div class="col-lg-12">
+            <div class="box-element">
+                <a class="btn btn-outline-dark" href="{% url 'jew_app:category_list' %}">&#171; Continue Shopping</a>
+                <table class="cart-table" style="margin: 20px; padding: 100px;">
+                    <tr>
+                        <th><h5 style="font-family: 'Cormorant', serif; font-size: 4vh; font-weight: 100;">Items: <strong>33</strong></h5></th>
+                        <th><h5 style="font-family: 'Cormorant', serif; font-size: 4vh; font-weight: 100;">Total: <strong>52</strong></h5></th>
+                        <th>
+                            <a style="float:right; margin:20px; color: #FFFF; font-family: Roboto;" class="search-button" href="{% url 'jew_app:checkout' %}">Checkout</a>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <div class="box-element">
+                <div class="cart-row">
+                    <div style="flex:2"></div>
+                    <div style="flex:2"><h5 style="font-family: 'Cormorant', serif; font-size: 3vh; font-weight: 100;">Product</h5></div>
+                    <div style="flex:2"><h5 style="font-family: 'Cormorant', serif; font-size: 3vh; font-weight: 100;">Price</h5></div>
+                    <div style="flex:2"><h5 style="font-family: 'Cormorant', serif; font-size: 3vh; font-weight: 100;">Quantity</h5></div>
+                    <div style="flex:2"><h5 style="font-family: 'Cormorant', serif; font-size: 3vh; font-weight: 100;">Total</h5></div>
+                </div>
+
+                <div class="cart-row">
+                    <div style="flex:2"><img class="row-image" src="https://www.joyalukkas.in//media/catalog/product//d/s/dsdb00003351_1.jpg"></div>
+                    <div style="flex:2">Product 1</div>
+                    <div style="flex:2">&#8377;513240</div>
+                    <div style="flex:2">
+                        <div class="quantity-div">
+                            <div class="quantity-btn minus-btn" onclick="decreaseQuantity()">-</div>
+                            <input class="quantity-input" type="number" id="quantity" value="1">
+                            <div class="quantity-btn plus-btn" onclick="increaseQuantity()">+</div>
+                        </div>
+                    </div>
+                    <div style="flex:2">&#8377;513240</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+         <script>
+        function decreaseQuantity() {
+            var quantityInput = document.getElementById("quantity");
+            var currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        }
+
+        function increaseQuantity() {
+            var quantityInput = document.getElementById("quantity");
+            var currentValue = parseInt(quantityInput.value);
+            quantityInput.value = currentValue + 1;
+        }
+    </script>
+
+
+
+{% endblock %}

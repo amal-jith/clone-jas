@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}LogIn | JoyAlukkas{% endblock %}
+
+{% block content %}
+
+    <div class="user-container">
+        <div class="row no-gutter">
+            <div class="col-md-6 d-none d-md-flex bg-image">
+                <img src="{% static 'img/login1.jpg' %}" class="bg-image">
+            </div>
+            <div class="col-md-6 bg-white">
+                <div class="login d-flex align-items-center py-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 col-xl-7 mx-auto">
+                                <h3 class="display-4">Sign In</h3>
+
+                                {% if request.user.is_authenticated %}
+                                <p class="text-success">You are logged in as : {{ request.user.username }}</p>
+                                {% else %}
+                                    <p class="text-danger h3">User is not logged in</p>
+                                {% endif %}
+
+
+                                <form action="{% url 'accounts:login' %}" method="POST">
+                                {% csrf_token %}
+                                    <!--<div class="form-group mb-3">
+                                        <input id="username" type="text" placeholder="Username" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    </div>-->
+                                    <div class="form-group mb-3">
+                                        <input id="email" type="email" placeholder="Email id or Mobile Number*" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    </div>
+                                    <div class="form-grp mb-3">
+                                        <input id="password" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <a href="#">Forgot Password?</a> | <a href="#">Request OTP!</a>
+                                    </div>
+                                    <button type="submit" class="login-button">LOGIN</button>
+                                </form>
+                                <div class="form-group mb-3">
+                                        <p>New to Joyalukkas? <a href="{% url 'accounts:register' %}">Register Here!</a></p>
+                                </div>
+
+
+                                <div class="or-divider">
+                                    <span>OR</span>
+                                </div>
+                                <a href="https://www.google.com/gmail/about/" target="_blank">
+                                    <button class="google-button" ><img src="{% static 'img/google.png'%}"> GOOGLE</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

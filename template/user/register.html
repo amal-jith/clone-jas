@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Registration | JoyAlukkas{% endblock %}
+
+
+{% block content %}
+
+    <div class="user-container">
+        <div class="row no-gutter">
+            <div class="col-md-6 d-none d-md-flex bg-image">
+                <img src="{% static 'img/login1.jpg' %}" class="bg-image">
+            </div>
+            <div class="col-md-6 bg-white">
+                <div class="login d-flex align-items-center py-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 col-xl-7 mx-auto">
+                                <h3 class="display-4">Sign Up!</h3>
+                                {% if form.errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{ form.errors }}</strong>
+                                </div>
+                                {% endif %}
+
+
+                                <form action="{% url 'accounts:register' %}" method="POST">
+                                {% csrf_token %}
+                                   <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <input id="first_name" name="first_name" type="text" placeholder="First Name" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" value="{{ form.first_name.value }}">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input id="last_name" name="last_name" type="text" placeholder="Last Name" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" value="{{ form.last_name.value }}">
+                                        </div>
+                                   </div>
+                                   <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <input id="email" name="email" type="email" placeholder="Email" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" value="{{ form.email.value }}">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input id="mobile_number" name="mobile_number" type="tel" placeholder="Mobile Number" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" value="{{ form.mobile_number.value }}">
+                                        </div>
+                                   </div>
+                                   <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <select id="gender" name="gender" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                            <option value="select">Select</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            <option value="not specified">Not Specified</option>
+                                        </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input type="date" id="dob" name="dob" required="" class="form-control rounded-pill border-0 shadow-sm px-4" value="{{ form.dob.value }}">
+                                        </div>
+                                   </div>
+                                   <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <input type="password" id="password" name="password" placeholder="Enter Password*" required="" class="form-control rounded-pill border-0 shadow-sm px-4" value="{{ form.password.value }}">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input type="password" id="password2" name="password2" placeholder="Confirm Password*" required="" class="form-control rounded-pill border-0 shadow-sm px-4" value="{{ form.password2.value }}">
+                                        </div>
+                                   </div>
+
+                                        <button type="submit" class="login-button">Sign Up</button>
+                                </form>
+
+
+
+
+
+
+
+<!--                                <form method="post" action="{% url 'accounts:register' %}">-->
+<!--                                      {% csrf_token %}-->
+<!--                                      {{ form.as_p }}-->
+<!--                                      <button type="submit">Register</button>-->
+<!--                                    </form>-->
+
+
+
+                                <!--<div class="form-group">
+                                    {% for message in messages %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{message}}
+                                    </div>
+                                    {% endfor %}
+                                </div>-->
+
+                                <div class="or-divider">
+                                    <span>OR</span>
+                                </div>
+                                <a href="https://www.google.com/gmail/about/" target="_blank">
+                                    <button class="google-button" ><img src="{% static 'img/google.png'%}"> GOOGLE</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

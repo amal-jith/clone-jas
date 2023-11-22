@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Promotions - JoyAlukkas{% endblock %}
+
+
+{% block content %}
+  <!--BANNER-->
+            <div class="promo-container">
+                 <div class="promo-heading">
+                    <h4 class="promo-heading1">OUR</h4>
+                    <p class="promo-heading2">PROMOTIONS</p>
+                    <p class="promo-text">Who doesn’t love a good deal? Take a look at our amazing deals just for you…</p>
+                 </div>
+            </div>
+
+
+
+
+        <article class="article group">
+            <img class="image right" src="{% static 'img/awards1.jpg' %}" alt="Image">
+                <section class="content">
+                    <p class="joy-text">THE MARKS</p>
+                    <span class="share-text">WE LEAVE BEHIND</span><br>
+                   <p class="joy-subtext">
+                       We have received prestigious awards and recognition over the years, highlighting our excellence in quality,
+                     design, social responsibility initiatives, and performance. Some of the most coveted awards we have received in recent history include:
+                   </p>
+                </section>
+        </article>
+
+{% endblock %}

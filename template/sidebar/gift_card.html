@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Gift Card - JoyAlukkas{% endblock %}
+
+
+{% block content %}
+
+    <div class="diamond-container">
+        <div class="half left">
+            GIFT CARD
+            <form>
+            <div class="form-group mb-3">
+                <input id="giftcardnum" type="number" placeholder="Enter Gift Card Number" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+            </div>
+            <button class="rate-button">CHECK STATUS</button>
+
+            </form>
+        </div>
+        <div class="half right">
+            <img src="{% static 'img/diamond1.png' %}">
+        </div>
+    </div>
+
+{% endblock %}
